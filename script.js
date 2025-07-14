@@ -110900,7 +110900,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (btn) {
     btn.addEventListener("click", () => {
       alert("Here's the link for the next round!");
-      alert("Link:");
+      alert("Link: https://kaidyn-hub.github.io/investigate/");
     });
   }
 });
