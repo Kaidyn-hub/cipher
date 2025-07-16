@@ -110849,56 +110849,43 @@
 
 
 
-const brainfuckCode =                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     '+[----->+++<]>+.++[->+++<]>+.--[--->+<]>-----.+++++++++++++.+++++++.---------.+++++++++.-----------.+++++++++++.---.+++++++++++++.++++++.-.-----.+++++++.----------.++++.+++++++++++++.';
-
-function brainfuckInterpreter(code) {
-  const tape = new Array(30000).fill(0);
-  let ptr = 0, output = '';
-  const loopStack = [];
-  const loopMap = {};
 
 
-  for (let i = 0; i < code.length; i++) {
-    if (code[i] === '[') loopStack.push(i);
-    else if (code[i] === ']') {
-      const start = loopStack.pop();
-      loopMap[start] = i;
-      loopMap[i] = start;
+
+
+
+
+
+const _x = [
+  77, 73, 67, 89, 123, 102, 48, 113, 53, 48, 111, 51, 95,
+  117, 51, 121, 54, 55, 111, 118, 95, 55, 117, 120, 55, 107, 125
+];
+
+function _y(z, a) {
+  return z.map(c => {
+    if (c >= 97 && c <= 122) {
+      return String.fromCharCode((c - 97 - a + 26) % 26 + 97);
+    } else if (c >= 65 && c <= 90) {
+      return String.fromCharCode((c - 65 - a + 26) % 26 + 65);
+    } else {
+      return String.fromCharCode(c);
     }
-  }
-
-  for (let i = 0; i < code.length; i++) {
-    const cmd = code[i];
-    switch (cmd) {
-      case '>': ptr++; break;
-      case '<': ptr--; break;
-      case '+': tape[ptr] = (tape[ptr] + 1) % 256; break;
-      case '-': tape[ptr] = (tape[ptr] - 1 + 256) % 256; break;
-      case '.': output += String.fromCharCode(tape[ptr]); break;
-      case ',': break; 
-      case '[': if (tape[ptr] === 0) i = loopMap[i]; break;
-      case ']': if (tape[ptr] !== 0) i = loopMap[i]; break;
-    }
-  }
-
-  return output;
+  }).join('');
 }
 
-function revealFlag() {
-  const result = brainfuckInterpreter(brainfuckCode);
-  document.getElementById("flagText").innerText = result;
+function __() {
+  const _ = _y(_x, 3);
+  document.getElementById("flagText").innerText = _;
   document.getElementById("flagBox").classList.remove("hidden");
 }
 
-// Console message
-console.log("%c🧠 Curious minds will be rewarded.", "color: #f9ca24; font-weight: bold;");
-console.log("%cUse revealFlag() in the console to uncover the secret.", "color: #00cec9;");
+console.log("%c🔒 Nothing to see here...", "color: #888");
+console.log("%cBut maybe... just maybe... you should call a mysterious function?", "color: #7ed6df;");
 
-// Alert button handler
 document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("nextRoundBtn");
-  if (btn) {
-    btn.addEventListener("click", () => {
+  const b = document.getElementById("nextRoundBtn");
+  if (b) {
+    b.addEventListener("click", () => {
       alert("Here's the link for the next round!");
       alert("Link: https://kaidyn-hub.github.io/investigate/");
     });
