@@ -110856,7 +110856,11 @@
 
 
 
-//IE1JQ1l7YzBuNTBsM19yM3YzNGxzXzdydTdofQ==
+
+//H = 4
+//From Bottom
+//N = 5
+//{5_rYdh_3t7uMC3thdh_7}Ip13h
 
 document.addEventListener("DOMContentLoaded", () => {
   const b = document.getElementById("nextRoundBtn");
