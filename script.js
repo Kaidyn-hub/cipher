@@ -110856,31 +110856,7 @@
 
 
 
-const _x = [
-  77, 73, 67, 89, 123, 102, 48, 113, 53, 48, 111, 51, 95,
-  117, 51, 121, 54, 55, 111, 118, 95, 55, 117, 120, 55, 107, 125
-];
-
-function _y(z, a) {
-  return z.map(c => {
-    if (c >= 97 && c <= 122) {
-      return String.fromCharCode((c - 97 - a + 26) % 26 + 97);
-    } else if (c >= 65 && c <= 90) {
-      return String.fromCharCode((c - 65 - a + 26) % 26 + 65);
-    } else {
-      return String.fromCharCode(c);
-    }
-  }).join('');
-}
-
-function __() {
-  const _ = _y(_x, 3);
-  document.getElementById("flagText").innerText = _;
-  document.getElementById("flagBox").classList.remove("hidden");
-}
-
-console.log("%c🔒 Nothing to see here...", "color: #888");
-console.log("%cBut maybe... just maybe... you should call a mysterious function?", "color: #7ed6df;");
+//IE1JQ1l7YzBuNTBsM19yM3YzNGxzXzdydTdofQ==
 
 document.addEventListener("DOMContentLoaded", () => {
   const b = document.getElementById("nextRoundBtn");
